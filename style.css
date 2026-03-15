@@ -21,14 +21,14 @@ body {
     font-size: 16px;
     line-height: 1.4;
     margin: 0;
-    padding: 40px;
+    padding: 60px;
     max-width: 900px;
 }
 /* --- 3. MENÚ AL ESTILO GUILLERMO ROS (A LA DERECHA) --- */
 nav {
     display: flex;
     justify-content: flex-end; /* Alinea todo a la derecha */
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 
 .nav-right {
@@ -40,26 +40,12 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: black;
+    color: #000 ;
     font-size: 16px;
 }
 
-/* --- 4. CV Y ESTRUCTURA --- */
-.item {
-    display: flex;
-    margin-bottom: 12px;
-}
-
-.year {
-    width: 80px;
-    flex-shrink: 0;
-}
-
-.desc {
-    flex-grow: 1;
-}
-
 /* Aplicación de las fuentes que pediste */
+h1 { font-size: 1.5em; margin-bottom: 40px; font-weight: normal; }
 h3 {
     font-family: 'Sentient', serif;
     font-weight: bold;
@@ -73,19 +59,21 @@ h3 {
     font-style: italic;
     color: black;
 }
+.info { margin-bottom: 40px; color: #666; }
 
-a:hover {
-    text-decoration: underline;
-}
+/* 5. REJILLA DE ITEMS */
+.item { display: flex; margin-bottom: 12px; }
+.year { width: 100px; flex-shrink: 0; }
+.desc { flex-grow: 1; font-style: italic; } /* Los trabajos en itálica */
 
+/* Estilo de enlaces */
+a { color: #000; text-decoration: none; }
+a:hover { text-decoration: underline; }
 /* Ajuste móvil */
 @media (max-width: 600px) {
     .item { flex-direction: column; }
     .year { margin-bottom: 5px; }
 }
-2. Cómo actualizar tu HTML
-Ahora, para que el menú se vea como quieres (apilado a la derecha), asegúrate de que tu cv.html tenga esta estructura en el menú:
-
 HTML
 <nav>
     <div class="nav-right">
