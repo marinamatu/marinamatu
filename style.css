@@ -45,3 +45,19 @@ a:hover {
         margin-bottom: 5px;
     }
 }
+nav {
+    display: flex;
+    gap: 20px; /* Espacio entre los enlaces */
+    margin-bottom: 50px; /* Separación con el resto de la página */
+    font-family: 'Sentient', serif;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
