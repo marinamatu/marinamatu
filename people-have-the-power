@@ -1,4 +1,7 @@
-  <nav class="main-nav">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<nav class="main-nav">
     <div class="nav-right">
         <a href="index.html">HOME</a>
         <a href="works.html">WORKS</a>
