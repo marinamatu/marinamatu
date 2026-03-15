@@ -1,1 +1,27 @@
+/* 1. Definimos la fuente */
+@font-face {
+    font-family: 'Sentient';
+    src: url('fonts/sentient-regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
+/* 2. Estilos globales */
+body {
+    font-family: 'Sentient', serif;
+    line-height: 1.6;
+    margin: 40px;
+}
+
+/* 3. Estilos de enlaces */
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* 4. Títulos (opcional, para que se vean bien) */
+h1 { font-size: 2em; }
