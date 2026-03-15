@@ -1,63 +1,96 @@
-/* Limpieza inicial */
+/* --- 1. CONFIGURACIÓN DE FUENTES --- */
+@font-face {
+    font-family: 'Sentient';
+    src: url('fonts/Sentient-Regular.otf') format('opentype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Sentient';
+    src: url('fonts/Sentient-Italic.otf') format('opentype');
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Sentient';
+    src: url('fonts/Sentient-BoldItalic.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
+}
+/* --- 2. DISEÑO GENERAL --- */
 body {
     font-family: 'Sentient', serif;
     font-size: 16px;
     line-height: 1.4;
     margin: 0;
-    padding: 40px; /* Margen general de la página */
-    max-width: 900px; /* Esto evita que el texto se estire demasiado en pantallas grandes */
+    padding: 40px;
+    max-width: 900px;
 }
-
-/* El contenedor de cada fila */
-.item {
-    display: flex;
-    margin-bottom: 15px; /* Espacio entre filas */
-}
-
-/* La columna de la izquierda (el año) */
-.year {
-    width: 80px; /* Espacio fijo para el año */
-    flex-shrink: 0; /* Evita que se encoja */
-}
-
-/* La columna de la derecha (el texto/enlace) */
-.desc {
-    flex-grow: 1; /* Ocupa el espacio restante */
-}
-
-/* Estilo de los enlaces para que no se vean como enlaces web tradicionales */
-a {
-    color: black;
-    text-decoration: none;
-}
-
-/* Efecto sutil al pasar el ratón */
-a:hover {
-    text-decoration: underline;
-}
-
-/* Ajuste para móviles: si la pantalla es muy estrecha, apilamos el año arriba */
-@media (max-width: 600px) {
-    .item {
-        flex-direction: column;
-    }
-    .year {
-        margin-bottom: 5px;
-    }
-}
+/* --- 3. MENÚ AL ESTILO GUILLERMO ROS (A LA DERECHA) --- */
 nav {
     display: flex;
-    gap: 20px; /* Espacio entre los enlaces */
-    margin-bottom: 50px; /* Separación con el resto de la página */
-    font-family: 'Sentient', serif;
+    justify-content: flex-end; /* Alinea todo a la derecha */
+    margin-bottom: 60px;
+}
+
+.nav-right {
+    display: flex;
+    flex-direction: column; /* Menú vertical */
+    align-items: flex-end; /* Alineación a la derecha */
+    gap: 5px;
 }
 
 nav a {
     text-decoration: none;
     color: black;
-    font-size: 1em;
+    font-size: 16px;
 }
 
-nav a:hover {
+/* --- 4. CV Y ESTRUCTURA --- */
+.item {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.year {
+    width: 80px;
+    flex-shrink: 0;
+}
+
+.desc {
+    flex-grow: 1;
+}
+
+/* Aplicación de las fuentes que pediste */
+h3 {
+    font-family: 'Sentient', serif;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.desc a {
+    font-family: 'Sentient', serif;
+    font-style: italic;
+    color: black;
+}
+
+a:hover {
     text-decoration: underline;
 }
+
+/* Ajuste móvil */
+@media (max-width: 600px) {
+    .item { flex-direction: column; }
+    .year { margin-bottom: 5px; }
+}
+2. Cómo actualizar tu HTML
+Ahora, para que el menú se vea como quieres (apilado a la derecha), asegúrate de que tu cv.html tenga esta estructura en el menú:
+
+HTML
+<nav>
+    <div class="nav-right">
+        <a href="index.html">HOME</a>
+        <a href="works.html">INDEX</a>
+        <a href="cv.html">INFO</a>
+    </div>
+</nav>
