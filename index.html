@@ -1,102 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marina Matu — Artista Visual</title>
-  <meta name="description" content="Marina Maturana — artista visual, Murcia 2001.">
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARINA MATURANA</title>
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Marina Maturana">
+    <meta property="og:description" content="visual artist.">
+    <meta property="og:image" content="https://www.marinamatu.com/share-image.jpeg">
+    <meta property="og:url" content="https://www.marinamatu.com">
+    <meta property="og:type" content="website">
+
+    <link href="https://api.fontshare.com/v2/css?f[]=sentient@400,700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ── NAVIGATION ── -->
-  <nav>
-    <a href="index.html" class="nav-logo">Marina Matu</a>
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span>
-    </button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="works.html">Works</a></li>
-      <li><a href="cv.html">Info</a></li>
-    </ul>
-  </nav>
-
-  <!-- ── STRIPS ── -->
-  <main class="page-content">
-    <section class="strips">
-
-      <a class="strip" href="obra/pan-y-circo.html">
-        <img src="https://picsum.photos/seed/panycirco/1600/600" alt="Pan y circo">
-        <div class="strip-info">
-          <span class="strip-title">Pan y circo</span>
-          <span class="strip-year">2024–25</span>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">MARINA MATURANA</div>
+            <div class="nav-right">
+                <a href="index.html" class="active">HOME</a>
+                <a href="works.html">INDEX</a>
+                <a href="cv.html">INFO</a>
+            </div>
         </div>
-      </a>
+    </nav>
 
-      <a class="strip" href="obra/el-paisaje-es-lo-primero.html">
-        <img src="https://picsum.photos/seed/elpaisaje/1600/600" alt="El paisaje es lo primero">
-        <div class="strip-info">
-          <span class="strip-title">El paisaje es lo primero</span>
-          <span class="strip-year">2025</span>
+    <main class="hero">
+        <div class="hero-content">
+            <p class="subtitle">Visual Artist</p>
+            <h1>Marina Maturana</h1>
+            <p class="location">b. 2001, Murcia (ESP) — Based in Santander</p>
+            
+            <div class="cta-group">
+                <a href="works.html" class="btn-main">View Works</a>
+                <a href="mailto:marinamaturanag@gmail.com" class="btn-sub">Contact</a>
+            </div>
         </div>
-      </a>
+    </main>
 
-      <a class="strip" href="obra/y-tiro.html">
-        <img src="https://picsum.photos/seed/marinahero/1600/600" alt="…Y tiro porque me lleva la corriente">
-        <div class="strip-info">
-          <span class="strip-title">…Y tiro porque me lleva la corriente</span>
-          <span class="strip-year">2024</span>
+    <footer>
+        <div class="footer-info">
+            <a href="https://www.instagram.com/marinamatu__/" target="_blank">@marinamatu__</a>
+            <span class="separator">|</span>
+            <a href="mailto:marinamaturanag@gmail.com">marinamaturanag@gmail.com</a>
         </div>
-      </a>
-
-      <a class="strip" href="obra/donde-amanecen.html">
-        <img src="https://picsum.photos/seed/donde1/1600/600" alt="Donde amanecen los tempranos">
-        <div class="strip-info">
-          <span class="strip-title">Donde amanecen los tempranos</span>
-          <span class="strip-year">2024</span>
-        </div>
-      </a>
-
-      <a class="strip" href="obra/relax.html">
-        <img src="https://picsum.photos/seed/relax1/1600/600" alt="Relax. Refresh. Recharge.">
-        <div class="strip-info">
-          <span class="strip-title">Relax. Refresh. Recharge.</span>
-          <span class="strip-year">2023</span>
-        </div>
-      </a>
-
-      <a class="strip" href="obra/people.html">
-        <img src="https://picsum.photos/seed/peoplepower/1600/600" alt="People have the power">
-        <div class="strip-info">
-          <span class="strip-title">People have the power</span>
-          <span class="strip-year">2023</span>
-        </div>
-      </a>
-
-    </section>
-  </main>
-
-  <!-- ── FOOTER ── -->
-  <footer>
-    <span>© 2025 Marina Maturana</span>
-    <div class="footer-links">
-      <a href="https://www.instagram.com/marinamatu__" target="_blank" rel="noopener">Instagram</a>
-      <a href="mailto:marinamaturanag@gmail.com">Contacto</a>
-    </div>
-  </footer>
-
-  <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
-      const bars = toggle.querySelectorAll('span');
-      bars[0].style.transform = open ? 'translateY(6px) rotate(45deg)'  : '';
-      bars[1].style.transform = open ? 'translateY(-6px) rotate(-45deg)' : '';
-    });
-  </script>
+    </footer>
 
 </body>
 </html>
