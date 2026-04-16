@@ -61,6 +61,14 @@ h3 {
 }
 .info { margin-bottom: 40px; color: #666; }
 
+.foto-cv {
+    width: 200px;          /* Ajusta el tamaño a tu gusto */
+    height: auto;          /* Mantiene la proporción */
+    border-radius: 4px;    /* Opcional: bordes ligeramente redondeados */
+    margin-bottom: 20px;   /* Separa la foto del texto de abajo */
+    display: block;        /* Para poder centrarla o manejarla mejor */
+}
+
 /* 5. REJILLA DE ITEMS */
 .item { display: flex; margin-bottom: 12px; }
 .year { width: 100px; flex-shrink: 0; }
