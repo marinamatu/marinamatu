@@ -1,92 +1,62 @@
-/* --- 1. CONFIGURACIÓN DE FUENTES --- */
-@font-face {
-    font-family: 'Sentient';
-    src: url('fonts/Sentient-Regular.otf') format('opentype');
-    font-weight: 400;
-}
-@font-face {
-    font-family: 'Sentient';
-    src: url('fonts/Sentient-Italic.otf') format('opentype');
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Sentient';
-    src: url('fonts/Sentient-BoldItalic.otf') format('opentype');
-    font-weight: bold;
-    font-style: italic;
-}
 /* --- 2. DISEÑO GENERAL --- */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Sentient', serif;
     font-size: 16px;
     line-height: 1.4;
     margin: 0;
-    padding: 60px;
-    max-width: 900px;
+    padding: 0; /* Quitamos el padding global para que la foto toque los bordes */
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* Evita que salgan barras de scroll molestas */
+    position: relative;
 }
+
 /* --- 3. MENÚ AL ESTILO GUILLERMO ROS (A LA DERECHA) --- */
 nav {
-    display: flex;
-    justify-content: flex-end; /* Alinea todo a la derecha */
-    margin-bottom: 80px;
+    position: absolute;
+    top: 60px; /* Separación desde arriba */
+    right: 60px; /* Separación desde la derecha */
+    z-index: 10; /* Flota por encima de la foto */
 }
 
 .nav-right {
     display: flex;
-    flex-direction: column; /* Menú vertical */
-    align-items: flex-end; /* Alineación a la derecha */
+    flex-direction: column;
+    align-items: flex-end;
     gap: 5px;
 }
 
 nav a {
     text-decoration: none;
-    color: #000 ;
+    color: #000;
     font-size: 16px;
 }
 
-/* Aplicación de las fuentes que pediste */
-h1 { font-size: 1.5em; margin-bottom: 40px; font-weight: normal; }
-h3 {
-    font-family: 'Sentient', serif;
-    font-weight: bold;
-    font-style: italic;
-    margin-top: 40px;
-    margin-bottom: 20px;
+nav a:hover {
+    text-decoration: underline;
 }
 
-.desc a {
-    font-family: 'Sentient', serif;
-    font-style: italic;
-    color: black;
+/* --- 4. PORTADA ENCAJADA ESTILO MIGUEL MARINA --- */
+.bg-cover-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    padding: 60px; /* Creamos el "marco" invisible para la foto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.info { margin-bottom: 40px; color: #666; }
 
-.foto-cv {
-    width: 200px;          /* Ajusta el tamaño a tu gusto */
-    height: auto;          /* Mantiene la proporción */
-    border-radius: 4px;    /* Opcional: bordes ligeramente redondeados */
-    margin-bottom: 20px;   /* Separa la foto del texto de abajo */
-    display: block;        /* Para poder centrarla o manejarla mejor */
+.bg-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* ¡ESTA ES LA CLAVE! Encaja la foto entera en la pantalla sin recortarla */
+    object-position: center;
 }
-
-/* 5. REJILLA DE ITEMS */
-.item { display: flex; margin-bottom: 12px; }
-.year { width: 100px; flex-shrink: 0; }
-.desc { flex-grow: 1; font-style: italic; } /* Los trabajos en itálica */
-
-/* Estilo de enlaces */
-a { color: #000; text-decoration: none; }
-a:hover { text-decoration: underline; }
-/* Ajuste móvil */
-@media (max-width: 600px) {
-    .item { flex-direction: column; }
-    .year { margin-bottom: 5px; }
-}
-HTML
-<nav>
-    <div class="nav-right">
-        <a href="index.html">HOME</a>
-        <a href="works.html">INDEX</a>
-        <a href="cv.html">INFO</a>
-    </div>
-</nav>
