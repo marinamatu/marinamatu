@@ -23,13 +23,13 @@
     </div>
 
     <!-- EL SCRIPT DE LA LUPA -->
-    <script>
-        const foto = document.getElementById('fotoPortada');
-
-        foto.addEventListener('click', () => {
-            // Esto quita o pone la clase 'en-detalle' cada vez que haces clic
-            foto.classList.toggle('en-detalle');
-        });
+<script>
+        function ampliarImagen() {
+            const foto = document.getElementById('fotoPortada');
+            if (foto) {
+                foto.classList.toggle('en-detalle');
+            }
+        }
     </script>
 
 </body>
