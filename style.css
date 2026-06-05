@@ -2,18 +2,23 @@
 * {
     box-sizing: border-box;
 }
-
+/* Este es el estilo por defecto para las páginas de texto (CV / WORKS) */
 body {
     font-family: 'Sentient', serif;
     font-size: 16px;
     line-height: 1.4;
     margin: 0;
-    padding: 0; /* Quitamos el padding global para que la foto toque los bordes */
+    padding: 60px; /* Recuperamos el margen elegante para el texto */
+    max-width: 900px; /* Evita que las líneas de texto sean infinitas */
+}
+
+/* ESTILO EXCLUSIVO PARA LA PORTADA (INDEX) */
+body.pagina-portada {
+    padding: 0;
     height: 100vh;
     width: 100vw;
-    overflow: hidden; /* Evita que salgan barras de scroll molestas */
-    position: relative;
-}
+    overflow: hidden; /* Solo esconde el scroll en la portada */
+    max-width: none;  /* Permite que la portada ocupe todo el ancho */
 
 /* --- 3. MENÚ AL ESTILO GUILLERMO ROS (A LA DERECHA) --- */
 nav {
