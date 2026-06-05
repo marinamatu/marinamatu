@@ -17,6 +17,23 @@
   <link href="https://api.fontshare.com/v2/css?f[]=sentient@400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+    <!-- ... tu código anterior de la portada ... -->
+    <div class="bg-cover-container">
+        <img src="portada.jpg" alt="Marina Maturana Portada" class="bg-cover-img" id="fotoPortada">
+    </div>
+
+    <!-- EL SCRIPT DE LA LUPA -->
+    <script>
+        const foto = document.getElementById('fotoPortada');
+
+        foto.addEventListener('click', () => {
+            // Esto quita o pone la clase 'en-detalle' cada vez que haces clic
+            foto.classList.toggle('en-detalle');
+        });
+    </script>
+
+</body>
+</html>
 <body>
     
     <!-- Menú igual al de Guillermo Ros / Tu CV -->
