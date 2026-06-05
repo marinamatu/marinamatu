@@ -60,3 +60,24 @@ nav a:hover {
     object-fit: contain; /* ¡ESTA ES LA CLAVE! Encaja la foto entera en la pantalla sin recortarla */
     object-position: center;
 }
+.bg-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    cursor: zoom-in; /* Esto transforma el cursor en una lupa con un signo + */
+    transition: transform 0.3s ease; /* Para que la transición sea suave */
+}
+/* Cuando la imagen tenga la clase 'en-detalle', se expandirá eliminando los márgenes */
+.bg-cover-img.en-detalle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    background-color: #fff; /* Fondo blanco para aislar la imagen, cámbialo a #000 si prefieres negro */
+    z-index: 9999; /* Se coloca por encima de absolutamente todo, incluido el menú */
+    padding: 20px; /* Un pequeño margen de cortesía para que no pegue al borde físico de la pantalla */
+    cursor: zoom-out; /* Al estar ampliada, el cursor se convierte en una lupa con un signo - */
+}
