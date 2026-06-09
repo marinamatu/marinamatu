@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MARINA MATURANA</title>
     
-    <!-- Favicon y Redes -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta property="og:title" content="Marina Maturana">
     <meta property="og:description" content="visual artist.">
@@ -13,30 +12,11 @@
     <meta property="og:url" content="https://www.marinamatu.com">
     <meta property="og:type" content="website">
 
-    <!-- Tipografía -->
-  <link href="https://api.fontshare.com/v2/css?f[]=sentient@400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=sentient@400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=1.6">
 </head>
-    <!-- ... tu código anterior de la portada ... -->
-    <div class="bg-cover-container">
-        <img src="portada.jpg" alt="Marina Maturana Portada" class="bg-cover-img" id="fotoPortada">
-    </div>
+<body class="pagina-portada">
 
-    <!-- EL SCRIPT DE LA LUPA -->
-<script>
-        function ampliarImagen() {
-            const foto = document.getElementById('fotoPortada');
-            if (foto) {
-                foto.classList.toggle('en-detalle');
-            }
-        }
-    </script>
-
-</body>
-</html>
-<body>
-    <body class="pagina-portada">
-    <!-- Menú igual al de Guillermo Ros / Tu CV -->
     <nav>
         <div class="nav-right">
             <a href="index.html" class="active">HOME</a>
@@ -45,13 +25,20 @@
         </div>
     </nav>
 
-    <!-- Contenedor de la foto de portada gigante -->
-   <div class="bg-cover-container">
-        <img src="portada.jpg" alt="Marina Maturana Portada" class="bg-cover-img">
+    <div class="bg-cover-container">
+        <img src="portada.jpg" alt="Marina Maturana Portada" class="bg-cover-img" id="fotoPortada" onclick="ampliarImagen()">
     </div>
-        <!-- El nombre del artista en grande abajo a la izquierda -->
-        <h1 class="main-title">MARINA MATURANA</h1>
-    </div>
+
+    <h1 class="main-title">MARINA MATURANA</h1>
+
+    <script>
+        function ampliarImagen() {
+            const foto = document.getElementById('fotoPortada');
+            if (foto) {
+                foto.classList.toggle('en-detalle');
+            }
+        }
+    </script>
 
 </body>
 </html>
