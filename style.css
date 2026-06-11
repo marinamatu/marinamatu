@@ -1,74 +1,52 @@
+/* --- 1. CONFIGURACIÓN DE FUENTES --- */
+@font-face {
+    font-family: 'Sentient';
+    src: url('fonts/Sentient-Regular.otf') format('opentype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Sentient';
+    src: url('fonts/Sentient-Italic.otf') format('opentype');
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Sentient';
+    src: url('fonts/Sentient-BoldItalic.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
+}
+
 /* --- 2. DISEÑO GENERAL --- */
 * {
     box-sizing: border-box;
 }
-/* Este es el estilo por defecto para las páginas de texto (CV / WORKS) */
+
+/* Estilo por defecto para páginas de texto (CV / WORKS) */
 body {
     font-family: 'Sentient', serif;
     font-size: 16px;
     line-height: 1.4;
     margin: 0;
-    padding: 60px; /* Recuperamos el margen elegante para el texto */
-    max-width: 900px; /* Evita que las líneas de texto sean infinitas */
+    padding: 60px;
+    max-width: 900px;
 }
 
-/* --- 4. PORTADA ENCAJADA ESTILO MIGUEL MARINA --- */
-.bg-cover-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+/* ESTILO EXCLUSIVO PARA LA PORTADA (INDEX) */
+body.pagina-portada {
+    padding: 0;
     height: 100vh;
-    z-index: 1;
-    padding: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none; /* Hace que el fondo blanco NO tenga la lupa */
-}
-
-.bg-cover-img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    cursor: zoom-in; /* La lupa SOLO aparece aquí, encima de la foto */
-    pointer-events: auto; /* Permite que la foto sí reciba el clic */
-    transition: transform 0.2s ease;
-}
-
-/* Cuando la imagen se amplía al hacer clic */
-.bg-cover-img.en-detalle {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100vw;
-    height: 100vh;
-    max-width: 100vw;
-    max-height: 100vh;
-    object-fit: contain;
-    background-color: #fff; /* Fondo blanco total */
-    z-index: 9999; /* Se pone por encima de menús y de todo */
-    padding: 20px;
-    cursor: zoom-out; /* Cambia a lupa con el signo menos (-) */
-}
-
-.perfil {
-    width: 240px;          /* Ajusta este número si la quieres un poco más grande o más pequeña */
-    max-width: 100%;       /* Evita que se deforme en pantallas de móviles */
-    height: auto;          /* Mantiene la proporción original de la foto */
-    display: block;        
-    margin-top: 0;
-    margin-bottom: 30px;   /* Separa la foto del texto que viene abajo */
+    overflow: hidden; 
+    max-width: none;  
+    position: relative;
 }
 
 /* --- 3. MENÚ AL ESTILO GUILLERMO ROS (A LA DERECHA) --- */
 nav {
     position: absolute;
-    top: 60px; /* Separación desde arriba */
-    right: 60px; /* Separación desde la derecha */
-    z-index: 10; /* Flota por encima de la foto */
+    top: 60px; 
+    right: 60px; 
+    z-index: 10; 
 }
 
 .nav-right {
@@ -96,36 +74,80 @@ nav a:hover {
     width: 100%;
     height: 100vh;
     z-index: 1;
-    padding: 60px; /* Creamos el "marco" invisible para la foto */
+    padding: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
+    pointer-events: none; /* El fondo blanco no captura la lupa */
 }
 
 .bg-cover-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* ¡ESTA ES LA CLAVE! Encaja la foto entera en la pantalla sin recortarla */
-    object-position: center;
-}
-.bg-cover-img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: contain;
-    object-position: center;
-    cursor: zoom-in; /* Esto transforma el cursor en una lupa con un signo + */
-    transition: transform 0.3s ease; /* Para que la transición sea suave */
+    cursor: zoom-in; /* Lupa con signo + sobre la foto */
+    pointer-events: auto; /* Permite hacer clic en la foto */
+    transition: transform 0.2s ease;
 }
-/* Cuando la imagen tenga la clase 'en-detalle', se expandirá eliminando los márgenes */
+
+/* Cuando la imagen se amplía al hacer clic */
 .bg-cover-img.en-detalle {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
     object-fit: contain;
-    background-color: #fff; /* Fondo blanco para aislar la imagen, cámbialo a #000 si prefieres negro */
-    z-index: 9999; /* Se coloca por encima de absolutamente todo, incluido el menú */
-    padding: 20px; /* Un pequeño margen de cortesía para que no pegue al borde físico de la pantalla */
-    cursor: zoom-out; /* Al estar ampliada, el cursor se convierte en una lupa con un signo - */
+    background-color: #fff; 
+    z-index: 9999; 
+    padding: 20px;
+    cursor: zoom-out; /* Lupa con signo - */
+}
+
+/* TÍTULO ABAJO A LA IZQUIERDA EN LA PORTADA */
+.main-title {
+    position: absolute;
+    bottom: 60px; 
+    left: 60px;   
+    margin: 0;
+    font-size: 24px; 
+    font-weight: normal;
+    letter-spacing: 1px;
+    z-index: 10;  
+}
+
+/* --- 5. DETALLES DE OTRAS PÁGINAS (CV) --- */
+.foto-cv {
+    width: 240px;          /* Tamaño pequeño y elegante controlado */
+    max-width: 100%;       
+    height: auto;          
+    display: block;        
+    margin-top: 20px;
+    margin-bottom: 30px;   
+}
+
+h1 { font-size: 1.5em; margin-bottom: 40px; font-weight: normal; }
+h2 { font-size: 1.2em; margin-top: 40px; margin-bottom: 20px; font-weight: normal; }
+.info { margin-bottom: 40px; color: #000; }
+
+/* REJILLA DE ITEMS DEL CV */
+.item { display: flex; margin-bottom: 12px; }
+.year { width: 100px; flex-shrink: 0; }
+.desc { flex-grow: 1; font-style: italic; }
+
+/* Estilo general de enlaces */
+a { color: #000; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Ajuste móvil */
+@media (max-width: 600px) {
+    body { padding: 20px; }
+    nav { top: 20px; right: 20px; }
+    .main-title { bottom: 20px; left: 20px; font-size: 20px; }
+    .item { flex-direction: column; }
+    .year { margin-bottom: 5px; }
 }
